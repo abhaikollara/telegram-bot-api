@@ -346,6 +346,18 @@ type PhotoSize struct {
 	FileSize     int    `json:"file_size"` // optional
 }
 
+// ChatAnimation contains information about an animation.
+type ChatAnimation struct {
+	FileID    string     `json:"file_id"`
+	Width     int        `json:"width"`
+	Height    int        `json:"height"`
+	Duration  int        `json:"duration"`
+	Thumbnail *PhotoSize `json:"thumb"`     // optional
+	FileName  string     `json:"file_name"` // optional
+	MimeType  string     `json:"mime_type"` // optional
+	FileSize  int        `json:"file_size"` // optional
+}
+
 // Audio contains information about audio.
 type Audio struct {
 	FileID       string     `json:"file_id"`
@@ -366,40 +378,6 @@ type Document struct {
 	FileName     string     `json:"file_name"` // optional
 	MimeType     string     `json:"mime_type"` // optional
 	FileSize     int        `json:"file_size"` // optional
-}
-
-// Sticker contains information about a sticker.
-type Sticker struct {
-	FileUniqueID string     `json:"file_unique_id"`
-	FileID       string     `json:"file_id"`
-	Width        int        `json:"width"`
-	Height       int        `json:"height"`
-	Thumbnail    *PhotoSize `json:"thumb"`       // optional
-	Emoji        string     `json:"emoji"`       // optional
-	FileSize     int        `json:"file_size"`   // optional
-	SetName      string     `json:"set_name"`    // optional
-	IsAnimated   bool       `json:"is_animated"` // optional
-}
-
-// StickerSet contains information about an sticker set.
-type StickerSet struct {
-	Name          string    `json:"name"`
-	Title         string    `json:"title"`
-	IsAnimated    bool      `json:"is_animated"`
-	ContainsMasks bool      `json:"contains_masks"`
-	Stickers      []Sticker `json:"stickers"`
-}
-
-// ChatAnimation contains information about an animation.
-type ChatAnimation struct {
-	FileID    string     `json:"file_id"`
-	Width     int        `json:"width"`
-	Height    int        `json:"height"`
-	Duration  int        `json:"duration"`
-	Thumbnail *PhotoSize `json:"thumb"`     // optional
-	FileName  string     `json:"file_name"` // optional
-	MimeType  string     `json:"mime_type"` // optional
-	FileSize  int        `json:"file_size"` // optional
 }
 
 // Video contains information about a video.
@@ -1088,4 +1066,27 @@ func (e Error) Error() string {
 type BotCommand struct {
 	Command     string `json:"command"`
 	Description string `json:"description"`
+}
+
+
+// Sticker contains information about a sticker.
+type Sticker struct {
+	FileUniqueID string     `json:"file_unique_id"`
+	FileID       string     `json:"file_id"`
+	Width        int        `json:"width"`
+	Height       int        `json:"height"`
+	Thumbnail    *PhotoSize `json:"thumb"`       // optional
+	Emoji        string     `json:"emoji"`       // optional
+	FileSize     int        `json:"file_size"`   // optional
+	SetName      string     `json:"set_name"`    // optional
+	IsAnimated   bool       `json:"is_animated"` // optional
+}
+
+// StickerSet contains information about an sticker set.
+type StickerSet struct {
+	Name          string    `json:"name"`
+	Title         string    `json:"title"`
+	IsAnimated    bool      `json:"is_animated"`
+	ContainsMasks bool      `json:"contains_masks"`
+	Stickers      []Sticker `json:"stickers"`
 }
