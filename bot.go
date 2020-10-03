@@ -19,7 +19,8 @@ import (
 	"github.com/technoweenie/multipartstreamer"
 )
 
-type HttpClient interface {
+// HTTPClient is an interface for making http requests
+type HTTPClient interface {
 	Do(req *http.Request) (*http.Response, error)
 }
 
@@ -30,7 +31,7 @@ type BotAPI struct {
 	Buffer int    `json:"buffer"`
 
 	Self            User       `json:"-"`
-	Client          HttpClient `json:"-"`
+	Client          HTTPClient `json:"-"`
 	shutdownChannel chan interface{}
 
 	apiEndpoint string
@@ -55,7 +56,7 @@ func NewBotAPIWithAPIEndpoint(token, apiEndpoint string) (*BotAPI, error) {
 // and allows you to pass a http.Client.
 //
 // It requires a token, provided by @BotFather on Telegram and API endpoint.
-func NewBotAPIWithClient(token, apiEndpoint string, client HttpClient) (*BotAPI, error) {
+func NewBotAPIWithClient(token, apiEndpoint string, client HTTPClient) (*BotAPI, error) {
 	bot := &BotAPI{
 		Token:           token,
 		Client:          client,
