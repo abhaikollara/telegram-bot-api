@@ -428,6 +428,15 @@ type Dice struct {
 	Value int    `json:"value"`
 }
 
+
+// PollOption contains information about one answer option in a poll.
+// TODO
+type PollOption struct{}
+
+// PollAnswer represents an answer of a user in a non-anonymous poll.
+// TODO
+type PollAnswer struct{}
+
 // Poll contains information about a poll.
 // TODO
 type Poll struct{}
