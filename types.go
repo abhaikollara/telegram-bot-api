@@ -504,7 +504,6 @@ type KeyboardButtonPollType struct {
 	Type string `json:"type"`
 }
 
-
 // ReplyKeyboardRemove allows the Bot to hide a custom keyboard.
 type ReplyKeyboardRemove struct {
 	RemoveKeyboard bool `json:"remove_keyboard"`
@@ -576,19 +575,19 @@ type ChatMember struct {
 	CustomTitle           string `json:"custom_title,omitempty"`              // optional
 	UntilDate             int64  `json:"until_date,omitempty"`                // optional
 	CanBeEdited           bool   `json:"can_be_edited,omitempty"`             // optional
-	CanChangeInfo         bool   `json:"can_change_info,omitempty"`           // optional
 	CanPostMessages       bool   `json:"can_post_messages,omitempty"`         // optional
 	CanEditMessages       bool   `json:"can_edit_messages,omitempty"`         // optional
 	CanDeleteMessages     bool   `json:"can_delete_messages,omitempty"`       // optional
-	CanInviteUsers        bool   `json:"can_invite_users,omitempty"`          // optional
 	CanRestrictMembers    bool   `json:"can_restrict_members,omitempty"`      // optional
-	CanPinMessages        bool   `json:"can_pin_messages,omitempty"`          // optional
 	CanPromoteMembers     bool   `json:"can_promote_members,omitempty"`       // optional
+	CanChangeInfo         bool   `json:"can_change_info,omitempty"`           // optional
+	CanInviteUsers        bool   `json:"can_invite_users,omitempty"`          // optional
+	CanPinMessages        bool   `json:"can_pin_messages,omitempty"`          // optional
 	CanSendMessages       bool   `json:"can_send_messages,omitempty"`         // optional
 	CanSendMediaMessages  bool   `json:"can_send_media_messages,omitempty"`   // optional
+	CanSendPolls          bool   `json:"can_send_polls"`                      // optional
 	CanSendOtherMessages  bool   `json:"can_send_other_messages,omitempty"`   // optional
 	CanAddWebPagePreviews bool   `json:"can_add_web_page_previews,omitempty"` // optional
-	CanSendPolls          bool   `json:"can_send_polls"`                      // optional
 }
 
 // IsCreator returns if the ChatMember was the creator of the chat.
