@@ -653,6 +653,37 @@ type InputMediaAudio struct{}
 // InputMediaDocument represents a general file to be sent.
 type InputMediaDocument struct{}
 
+// Sticker contains information about a sticker.
+type Sticker struct {
+	FileID       string        `json:"file_id"`
+	FileUniqueID string        `json:"file_unique_id"`
+	Width        int           `json:"width"`
+	Height       int           `json:"height"`
+	IsAnimated   bool          `json:"is_animated"`
+	Thumb        *PhotoSize    `json:"thumb"`         // optional
+	Emoji        string        `json:"emoji"`         // optional
+	SetName      string        `json:"set_name"`      // optional
+	MaskPosition *MaskPosition `json:"mask_position"` // optional
+	FileSize     int           `json:"file_size"`     // optional
+}
+
+// StickerSet contains information about an sticker set.
+type StickerSet struct {
+	Name          string    `json:"name"`
+	Title         string    `json:"title"`
+	IsAnimated    bool      `json:"is_animated"`
+	ContainsMasks bool      `json:"contains_masks"`
+	Stickers      []Sticker `json:"stickers"`
+}
+
+// MaskPosition describes the position on faces where a mask should be placed by default.
+type MaskPosition struct {
+	Point  string  `json:"point"`
+	XShift float64 `json:"x_shift"`
+	YShift float64 `json:"y_shift"`
+	Scale  float64 `json:"scale"`
+}
+
 // InlineQuery is a Query from Telegram for an inline request.
 type InlineQuery struct {
 	ID       string    `json:"id"`
@@ -1084,26 +1115,4 @@ type Error struct {
 
 func (e Error) Error() string {
 	return e.Message
-}
-
-// Sticker contains information about a sticker.
-type Sticker struct {
-	FileUniqueID string     `json:"file_unique_id"`
-	FileID       string     `json:"file_id"`
-	Width        int        `json:"width"`
-	Height       int        `json:"height"`
-	Thumbnail    *PhotoSize `json:"thumb"`       // optional
-	Emoji        string     `json:"emoji"`       // optional
-	FileSize     int        `json:"file_size"`   // optional
-	SetName      string     `json:"set_name"`    // optional
-	IsAnimated   bool       `json:"is_animated"` // optional
-}
-
-// StickerSet contains information about an sticker set.
-type StickerSet struct {
-	Name          string    `json:"name"`
-	Title         string    `json:"title"`
-	IsAnimated    bool      `json:"is_animated"`
-	ContainsMasks bool      `json:"contains_masks"`
-	Stickers      []Sticker `json:"stickers"`
 }
