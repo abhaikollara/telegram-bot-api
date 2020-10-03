@@ -1001,6 +1001,9 @@ type Game struct {
 	Animation    Animation       `json:"animation"`
 }
 
+// CallbackGame is for starting a game in an inline keyboard button.
+type CallbackGame struct{}
+
 // GameHighScore is a user's score and position on the leaderboard.
 type GameHighScore struct {
 	Position int  `json:"position"`
@@ -1017,8 +1020,7 @@ type Animation struct {
 	FileSize int       `json:"file_size"`
 }
 
-// CallbackGame is for starting a game in an inline keyboard button.
-type CallbackGame struct{}
+\
 
 // WebhookInfo is information about a currently set webhook.
 type WebhookInfo struct {
