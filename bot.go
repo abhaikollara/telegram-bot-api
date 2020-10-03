@@ -1,6 +1,6 @@
-// Package tgbotapi has functions and types used for interacting with
+// Package telegram has functions and types used for interacting with
 // the Telegram Bot API.
-package tgbotapi
+package telegram
 
 import (
 	"bytes"

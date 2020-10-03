@@ -1,4 +1,4 @@
-package tgbotapi
+package telegram
 
 import (
 	"net/url"
