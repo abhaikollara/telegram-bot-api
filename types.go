@@ -88,14 +88,6 @@ type GroupChat struct {
 	Title string `json:"title"`
 }
 
-// ChatPhoto represents a chat photo.
-type ChatPhoto struct {
-	SmallFileID       string `json:"small_file_id"`
-	SmallFileUniqueID string `json:"small_file_unique_id"`
-	BigFileID         string `json:"big_file_id"`
-	BigFileUniqueID   string `json:"big_file_unique_id"`
-}
-
 // Chat contains information about the place a message was sent.
 type Chat struct {
 	ID                  int64            `json:"id"`
@@ -580,6 +572,14 @@ type CallbackQuery struct {
 type ForceReply struct {
 	ForceReply bool `json:"force_reply"`
 	Selective  bool `json:"selective"` // optional
+}
+
+// ChatPhoto represents a chat photo.
+type ChatPhoto struct {
+	SmallFileID       string `json:"small_file_id"`
+	SmallFileUniqueID string `json:"small_file_unique_id"`
+	BigFileID         string `json:"big_file_id"`
+	BigFileUniqueID   string `json:"big_file_unique_id"`
 }
 
 // ChatMember is information about a member in a chat.
