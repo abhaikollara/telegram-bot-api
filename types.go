@@ -151,22 +151,22 @@ type Message struct {
 	AuthorSignature       string                `json:"author_signature"`        // optional
 	Text                  string                `json:"text"`                    // optional
 	Entities              *[]MessageEntity      `json:"entities"`                // optional
-	CaptionEntities       *[]MessageEntity      `json:"caption_entities"`        // optional
+	Animation             *ChatAnimation        `json:"animation"`               // optional
 	Audio                 *Audio                `json:"audio"`                   // optional
 	Document              *Document             `json:"document"`                // optional
-	Animation             *ChatAnimation        `json:"animation"`               // optional
-	Game                  *Game                 `json:"game"`                    // optional
 	Photo                 *[]PhotoSize          `json:"photo"`                   // optional
 	Sticker               *Sticker              `json:"sticker"`                 // optional
 	Video                 *Video                `json:"video"`                   // optional
 	VideoNote             *VideoNote            `json:"video_note"`              // optional
 	Voice                 *Voice                `json:"voice"`                   // optional
 	Caption               string                `json:"caption"`                 // optional
+	CaptionEntities       *[]MessageEntity      `json:"caption_entities"`        // optional
 	Contact               *Contact              `json:"contact"`                 // optional
 	Dice                  *Dice                 `json:"dice"`                    // optional
+	Game                  *Game                 `json:"game"`                    // optional
 	Poll                  *Poll                 `json:"poll"`                    // optional // Not implemented yet
-	Location              *Location             `json:"location"`                // optional
 	Venue                 *Venue                `json:"venue"`                   // optional
+	Location              *Location             `json:"location"`                // optional
 	NewChatMembers        *[]User               `json:"new_chat_members"`        // optional
 	LeftChatMember        *User                 `json:"left_chat_member"`        // optional
 	NewChatTitle          string                `json:"new_chat_title"`          // optional
