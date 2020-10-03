@@ -713,10 +713,9 @@ type InlineQueryResultPhoto struct {
 	Type                string                `json:"type"`      // required
 	ID                  string                `json:"id"`        // required
 	URL                 string                `json:"photo_url"` // required
-	MimeType            string                `json:"mime_type"`
+	ThumbURL            string                `json:"thumb_url"`
 	Width               int                   `json:"photo_width"`
 	Height              int                   `json:"photo_height"`
-	ThumbURL            string                `json:"thumb_url"`
 	Title               string                `json:"title"`
 	Description         string                `json:"description"`
 	Caption             string                `json:"caption"`
