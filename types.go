@@ -693,50 +693,6 @@ type InlineQuery struct {
 	Offset   string    `json:"offset"`
 }
 
-// Game is a game within Telegram.
-type Game struct {
-	Title        string          `json:"title"`
-	Description  string          `json:"description"`
-	Photo        []PhotoSize     `json:"photo"`
-	Text         string          `json:"text"`
-	TextEntities []MessageEntity `json:"text_entities"`
-	Animation    Animation       `json:"animation"`
-}
-
-// Animation is a GIF animation demonstrating the game.
-type Animation struct {
-	FileID   string    `json:"file_id"`
-	Thumb    PhotoSize `json:"thumb"`
-	FileName string    `json:"file_name"`
-	MimeType string    `json:"mime_type"`
-	FileSize int       `json:"file_size"`
-}
-
-// GameHighScore is a user's score and position on the leaderboard.
-type GameHighScore struct {
-	Position int  `json:"position"`
-	User     User `json:"user"`
-	Score    int  `json:"score"`
-}
-
-// CallbackGame is for starting a game in an inline keyboard button.
-type CallbackGame struct{}
-
-// WebhookInfo is information about a currently set webhook.
-type WebhookInfo struct {
-	URL                  string `json:"url"`
-	HasCustomCertificate bool   `json:"has_custom_certificate"`
-	PendingUpdateCount   int    `json:"pending_update_count"`
-	LastErrorDate        int    `json:"last_error_date"`    // optional
-	LastErrorMessage     string `json:"last_error_message"` // optional
-	MaxConnections       int    `json:"max_connections"`    // optional
-}
-
-// IsSet returns true if a webhook is currently set.
-func (info WebhookInfo) IsSet() bool {
-	return info.URL != ""
-}
-
 // InlineQueryResultArticle is an inline query response article.
 type InlineQueryResultArticle struct {
 	Type                string                `json:"type"`                            // required
@@ -1034,6 +990,50 @@ type InputContactMessageContent struct {
 	PhoneNumber string `json:"phone_number"`
 	FirstName   string `json:"first_name"`
 	LastName    string `json:"last_name"`
+}
+
+// Game is a game within Telegram.
+type Game struct {
+	Title        string          `json:"title"`
+	Description  string          `json:"description"`
+	Photo        []PhotoSize     `json:"photo"`
+	Text         string          `json:"text"`
+	TextEntities []MessageEntity `json:"text_entities"`
+	Animation    Animation       `json:"animation"`
+}
+
+// Animation is a GIF animation demonstrating the game.
+type Animation struct {
+	FileID   string    `json:"file_id"`
+	Thumb    PhotoSize `json:"thumb"`
+	FileName string    `json:"file_name"`
+	MimeType string    `json:"mime_type"`
+	FileSize int       `json:"file_size"`
+}
+
+// GameHighScore is a user's score and position on the leaderboard.
+type GameHighScore struct {
+	Position int  `json:"position"`
+	User     User `json:"user"`
+	Score    int  `json:"score"`
+}
+
+// CallbackGame is for starting a game in an inline keyboard button.
+type CallbackGame struct{}
+
+// WebhookInfo is information about a currently set webhook.
+type WebhookInfo struct {
+	URL                  string `json:"url"`
+	HasCustomCertificate bool   `json:"has_custom_certificate"`
+	PendingUpdateCount   int    `json:"pending_update_count"`
+	LastErrorDate        int    `json:"last_error_date"`    // optional
+	LastErrorMessage     string `json:"last_error_message"` // optional
+	MaxConnections       int    `json:"max_connections"`    // optional
+}
+
+// IsSet returns true if a webhook is currently set.
+func (info WebhookInfo) IsSet() bool {
+	return info.URL != ""
 }
 
 // Invoice contains basic information about an invoice.
