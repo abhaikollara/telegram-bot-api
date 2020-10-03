@@ -504,11 +504,6 @@ type KeyboardButtonPollType struct {
 	Type string `json:"type"`
 }
 
-// ReplyKeyboardHide allows the Bot to hide a custom keyboard.
-type ReplyKeyboardHide struct {
-	HideKeyboard bool `json:"hide_keyboard"`
-	Selective    bool `json:"selective"` // optional
-}
 
 // ReplyKeyboardRemove allows the Bot to hide a custom keyboard.
 type ReplyKeyboardRemove struct {
