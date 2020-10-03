@@ -151,7 +151,7 @@ type Message struct {
 	AuthorSignature       string                `json:"author_signature"`        // optional
 	Text                  string                `json:"text"`                    // optional
 	Entities              *[]MessageEntity      `json:"entities"`                // optional
-	Animation             *ChatAnimation        `json:"animation"`               // optional
+	Animation             *Animation        `json:"animation"`               // optional
 	Audio                 *Audio                `json:"audio"`                   // optional
 	Document              *Document             `json:"document"`                // optional
 	Photo                 *[]PhotoSize          `json:"photo"`                   // optional
@@ -346,16 +346,17 @@ type PhotoSize struct {
 	FileSize     int    `json:"file_size"` // optional
 }
 
-// ChatAnimation contains information about an animation.
-type ChatAnimation struct {
-	FileID    string     `json:"file_id"`
-	Width     int        `json:"width"`
-	Height    int        `json:"height"`
-	Duration  int        `json:"duration"`
-	Thumbnail *PhotoSize `json:"thumb"`     // optional
-	FileName  string     `json:"file_name"` // optional
-	MimeType  string     `json:"mime_type"` // optional
-	FileSize  int        `json:"file_size"` // optional
+// Animation contains information about an animation.
+type Animation struct {
+	FileID       string     `json:"file_id"`
+	FileUniqueID string     `json:"file_unique_id"`
+	Width        int        `json:"width"`
+	Height       int        `json:"height"`
+	Duration     int        `json:"duration"`
+	Thumb        *PhotoSize `json:"thumb"`     // optional
+	FileName     string     `json:"file_name"` // optional
+	MimeType     string     `json:"mime_type"` // optional
+	FileSize     int        `json:"file_size"` // optional
 }
 
 // Audio contains information about audio.
@@ -1010,16 +1011,6 @@ type GameHighScore struct {
 	User     User `json:"user"`
 	Score    int  `json:"score"`
 }
-
-// Animation is a GIF animation demonstrating the game.
-type Animation struct {
-	FileID   string    `json:"file_id"`
-	Thumb    PhotoSize `json:"thumb"`
-	FileName string    `json:"file_name"`
-	MimeType string    `json:"mime_type"`
-	FileSize int       `json:"file_size"`
-}
-
 
 // WebhookInfo is information about a currently set webhook.
 type WebhookInfo struct {
