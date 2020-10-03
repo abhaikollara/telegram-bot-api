@@ -688,6 +688,15 @@ type InputMediaVideo struct {
 	SupportsStreaming bool   `json:"supports_streaming"`
 }
 
+// InputMediaAnimation represents an animation file (GIF or H.264/MPEG-4 AVC video without sound) to be sent.
+type InputMediaAnimation struct {}
+
+// InputMediaAudio represents an audio file to be treated as music to be sent.
+type InputMediaAudio struct {}
+
+// InputMediaDocument represents a general file to be sent.
+type InputMediaDocument struct {}
+
 // InlineQuery is a Query from Telegram for an inline request.
 type InlineQuery struct {
 	ID       string    `json:"id"`
