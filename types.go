@@ -96,7 +96,6 @@ type Chat struct {
 	UserName            string           `json:"username"`                       // optional
 	FirstName           string           `json:"first_name"`                     // optional
 	LastName            string           `json:"last_name"`                      // optional
-	AllMembersAreAdmins bool             `json:"all_members_are_administrators"` // optional
 	Photo               *ChatPhoto       `json:"photo"`                          // optional
 	Description         string           `json:"description,omitempty"`          // optional
 	InviteLink          string           `json:"invite_link,omitempty"`          // optional
