@@ -1001,6 +1001,13 @@ type Game struct {
 	Animation    Animation       `json:"animation"`
 }
 
+// GameHighScore is a user's score and position on the leaderboard.
+type GameHighScore struct {
+	Position int  `json:"position"`
+	User     User `json:"user"`
+	Score    int  `json:"score"`
+}
+
 // Animation is a GIF animation demonstrating the game.
 type Animation struct {
 	FileID   string    `json:"file_id"`
@@ -1008,13 +1015,6 @@ type Animation struct {
 	FileName string    `json:"file_name"`
 	MimeType string    `json:"mime_type"`
 	FileSize int       `json:"file_size"`
-}
-
-// GameHighScore is a user's score and position on the leaderboard.
-type GameHighScore struct {
-	Position int  `json:"position"`
-	User     User `json:"user"`
-	Score    int  `json:"score"`
 }
 
 // CallbackGame is for starting a game in an inline keyboard button.
