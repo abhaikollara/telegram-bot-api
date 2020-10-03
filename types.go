@@ -90,20 +90,20 @@ type GroupChat struct {
 
 // Chat contains information about the place a message was sent.
 type Chat struct {
-	ID                  int64            `json:"id"`
-	Type                string           `json:"type"`
-	Title               string           `json:"title"`                          // optional
-	UserName            string           `json:"username"`                       // optional
-	FirstName           string           `json:"first_name"`                     // optional
-	LastName            string           `json:"last_name"`                      // optional
-	Photo               *ChatPhoto       `json:"photo"`                          // optional
-	Description         string           `json:"description,omitempty"`          // optional
-	InviteLink          string           `json:"invite_link,omitempty"`          // optional
-	PinnedMessage       *Message         `json:"pinned_message"`                 // optional
-	Permissions         *ChatPermissions `json:"permissions"`                    // optional
-	SlowModelDelay      int              `json:"slow_mode_delay"`                // optional
-	StickerSetName      string           `json:"sticker_set_name"`               // optional
-	CanSetStickerSet    bool             `json:"can_set_sticker_set"`            // optional
+	ID               int64            `json:"id"`
+	Type             string           `json:"type"`
+	Title            string           `json:"title"`                 // optional
+	UserName         string           `json:"username"`              // optional
+	FirstName        string           `json:"first_name"`            // optional
+	LastName         string           `json:"last_name"`             // optional
+	Photo            *ChatPhoto       `json:"photo"`                 // optional
+	Description      string           `json:"description,omitempty"` // optional
+	InviteLink       string           `json:"invite_link,omitempty"` // optional
+	PinnedMessage    *Message         `json:"pinned_message"`        // optional
+	Permissions      *ChatPermissions `json:"permissions"`           // optional
+	SlowModelDelay   int              `json:"slow_mode_delay"`       // optional
+	StickerSetName   string           `json:"sticker_set_name"`      // optional
+	CanSetStickerSet bool             `json:"can_set_sticker_set"`   // optional
 }
 
 // IsPrivate returns if the Chat is a private conversation.
@@ -428,14 +428,20 @@ type Dice struct {
 	Value int    `json:"value"`
 }
 
-
 // PollOption contains information about one answer option in a poll.
 // TODO
-type PollOption struct{}
+type PollOption struct {
+	Text       string `json:"text"`
+	VoterCount string `json:"voter_count"`
+}
 
 // PollAnswer represents an answer of a user in a non-anonymous poll.
 // TODO
-type PollAnswer struct{}
+type PollAnswer struct {
+	PollID    string `json:"poll_id"`
+	User      *User  `json:"user"`
+	OptionIDs []int  `json:"option_ids"`
+}
 
 // Poll contains information about a poll.
 // TODO
@@ -1076,7 +1082,6 @@ type BotCommand struct {
 	Command     string `json:"command"`
 	Description string `json:"description"`
 }
-
 
 // Sticker contains information about a sticker.
 type Sticker struct {
