@@ -710,17 +710,6 @@ func NewEditMessageReplyMarkup(chatID int64, messageID int, replyMarkup InlineKe
 	}
 }
 
-// NewHideKeyboard hides the keyboard, with the option for being selective
-// or hiding for everyone.
-func NewHideKeyboard(selective bool) ReplyKeyboardHide {
-	log.Println("NewHideKeyboard is deprecated, please use NewRemoveKeyboard")
-
-	return ReplyKeyboardHide{
-		HideKeyboard: true,
-		Selective:    selective,
-	}
-}
-
 // NewRemoveKeyboard hides the keyboard, with the option for being selective
 // or hiding for everyone.
 func NewRemoveKeyboard(selective bool) ReplyKeyboardRemove {
