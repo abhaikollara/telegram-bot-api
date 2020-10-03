@@ -105,14 +105,14 @@ type Chat struct {
 	FirstName           string           `json:"first_name"`                     // optional
 	LastName            string           `json:"last_name"`                      // optional
 	AllMembersAreAdmins bool             `json:"all_members_are_administrators"` // optional
-	Photo               *ChatPhoto       `json:"photo"`
-	Description         string           `json:"description,omitempty"` // optional
-	InviteLink          string           `json:"invite_link,omitempty"` // optional
-	PinnedMessage       *Message         `json:"pinned_message"`        // optional
-	Permissions         *ChatPermissions `json:"permissions"`           //optional
-	SlowModelDelay      int              `json:"slow_mode_delay"`       //optional
-	StickerSetName      string           `json:"sticker_set_name"`      //optional
-	CanSetStickerSet    bool             `json:"can_set_sticker_set"`   //optional
+	Photo               *ChatPhoto       `json:"photo"`                          // optional
+	Description         string           `json:"description,omitempty"`          // optional
+	InviteLink          string           `json:"invite_link,omitempty"`          // optional
+	PinnedMessage       *Message         `json:"pinned_message"`                 // optional
+	Permissions         *ChatPermissions `json:"permissions"`                    // optional
+	SlowModelDelay      int              `json:"slow_mode_delay"`                // optional
+	StickerSetName      string           `json:"sticker_set_name"`               // optional
+	CanSetStickerSet    bool             `json:"can_set_sticker_set"`            // optional
 }
 
 // IsPrivate returns if the Chat is a private conversation.
@@ -191,7 +191,7 @@ type Message struct {
 	SuccessfulPayment     *SuccessfulPayment    `json:"successful_payment"`      // optional
 	ConnectedWebsite      string                `json:"connected_website"`       // optional
 	PassportData          *PassportData         `json:"passport_data,omitempty"` // optional
-	ReplyMarkup           *InlineKeyboardMarkup `json:"reply_markup"`            // optional // Not implemented yet
+	ReplyMarkup           *InlineKeyboardMarkup `json:"reply_markup"`            // optional
 }
 
 // Time converts the message timestamp into a Time.
