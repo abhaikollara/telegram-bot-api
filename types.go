@@ -617,6 +617,12 @@ type ChatPermissions struct {
 	CanPinMessages        bool `json:"can_pin_messages"`
 }
 
+// BotCommand represents a bot command.
+type BotCommand struct {
+	Command     string `json:"command"`
+	Description string `json:"description"`
+}
+
 // Game is a game within Telegram.
 type Game struct {
 	Title        string          `json:"title"`
@@ -1069,12 +1075,6 @@ type Error struct {
 
 func (e Error) Error() string {
 	return e.Message
-}
-
-// BotCommand represents a bot command.
-type BotCommand struct {
-	Command     string `json:"command"`
-	Description string `json:"description"`
 }
 
 // Sticker contains information about a sticker.
