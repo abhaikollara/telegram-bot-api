@@ -151,7 +151,7 @@ type Message struct {
 	AuthorSignature       string                `json:"author_signature"`        // optional
 	Text                  string                `json:"text"`                    // optional
 	Entities              *[]MessageEntity      `json:"entities"`                // optional
-	Animation             *Animation        `json:"animation"`               // optional
+	Animation             *Animation            `json:"animation"`               // optional
 	Audio                 *Audio                `json:"audio"`                   // optional
 	Document              *Document             `json:"document"`                // optional
 	Photo                 *[]PhotoSize          `json:"photo"`                   // optional
