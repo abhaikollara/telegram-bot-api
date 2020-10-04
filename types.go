@@ -645,48 +645,48 @@ type InputMediaPhoto struct {
 
 // InputMediaVideo contains a video for displaying as part of a media group.
 type InputMediaVideo struct {
-	Type  string `json:"type"`
-	Media string `json:"media"`
-	// thumb intentionally missing as it is not currently compatible
+	Type              string `json:"type"`
+	Media             string `json:"media"`
 	Caption           string `json:"caption"`
 	ParseMode         string `json:"parse_mode"`
 	Width             int    `json:"width"`
 	Height            int    `json:"height"`
 	Duration          int    `json:"duration"`
 	SupportsStreaming bool   `json:"supports_streaming"`
+	// thumb intentionally missing as it is not currently compatible
 }
 
 // InputMediaAnimation represents an animation file (GIF or H.264/MPEG-4 AVC video without sound) to be sent.
-type InputMediaAnimation struct{
-	Type  string `json:"type"`
-	Media string `json:"media"`
+type InputMediaAnimation struct {
+	Type      string `json:"type"`
+	Media     string `json:"media"`
+	Caption   string `json:"caption"`
+	ParseMode string `json:"parse_mode"`
+	Width     int    `json:"width"`
+	Height    int    `json:"height"`
+	Duration  int    `json:"duration"`
 	// thumb intentionally missing as it is not currently compatible
-	Caption           string `json:"caption"`
-	ParseMode         string `json:"parse_mode"`
-	Width             int    `json:"width"`
-	Height            int    `json:"height"`
-	Duration          int    `json:"duration"`
 }
 
 // InputMediaAudio represents an audio file to be treated as music to be sent.
-type InputMediaAudio struct{
-	Type  string `json:"type"`
-	Media string `json:"media"`
-	// thumb intentionally missing as it is not currently compatible
-	Caption           string `json:"caption"`
-	ParseMode         string `json:"parse_mode"`
-	Duration          int    `json:"duration"`
+type InputMediaAudio struct {
+	Type      string `json:"type"`
+	Media     string `json:"media"`
+	Caption   string `json:"caption"`
+	ParseMode string `json:"parse_mode"`
+	Duration  int    `json:"duration"`
 	Performer string `json:"performer"`
-	Title string `json:"title"`
+	Title     string `json:"title"`
+	// thumb intentionally missing as it is not currently compatible
 }
 
 // InputMediaDocument represents a general file to be sent.
-type InputMediaDocument struct{
-	Type  string `json:"type"`
-	Media string `json:"media"`
+type InputMediaDocument struct {
+	Type      string `json:"type"`
+	Media     string `json:"media"`
+	Caption   string `json:"caption"`
+	ParseMode string `json:"parse_mode"`
 	// thumb intentionally missing as it is not currently compatible
-	Caption           string `json:"caption"`
-	ParseMode         string `json:"parse_mode"`
 }
 
 // Sticker contains information about a sticker.
