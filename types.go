@@ -430,14 +430,12 @@ type Dice struct {
 }
 
 // PollOption contains information about one answer option in a poll.
-// TODO
 type PollOption struct {
 	Text       string `json:"text"`
 	VoterCount string `json:"voter_count"`
 }
 
 // PollAnswer represents an answer of a user in a non-anonymous poll.
-// TODO
 type PollAnswer struct {
 	PollID    string `json:"poll_id"`
 	User      *User  `json:"user"`
@@ -445,7 +443,6 @@ type PollAnswer struct {
 }
 
 // Poll contains information about a poll.
-// TODO
 type Poll struct {
 	ID                    string           `json:"id"`
 	Question              string           `json:"question"`
