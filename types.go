@@ -681,7 +681,13 @@ type InputMediaAudio struct{
 }
 
 // InputMediaDocument represents a general file to be sent.
-type InputMediaDocument struct{}
+type InputMediaDocument struct{
+	Type  string `json:"type"`
+	Media string `json:"media"`
+	// thumb intentionally missing as it is not currently compatible
+	Caption           string `json:"caption"`
+	ParseMode         string `json:"parse_mode"`
+}
 
 // Sticker contains information about a sticker.
 type Sticker struct {
