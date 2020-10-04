@@ -54,7 +54,7 @@ type User struct {
 	ID                      int    `json:"id"`
 	FirstName               string `json:"first_name"`
 	LastName                string `json:"last_name"`                   // optional
-	UserName                string `json:"username"`                    // optional
+	Username                string `json:"username"`                    // optional
 	LanguageCode            string `json:"language_code"`               // optional
 	IsBot                   bool   `json:"is_bot"`                      // optional
 	CanJoinGroups           bool   `json:"can_join_groups"`             // optional. Returned only in getMe
@@ -70,8 +70,8 @@ func (u *User) String() string {
 	if u == nil {
 		return ""
 	}
-	if u.UserName != "" {
-		return u.UserName
+	if u.Username != "" {
+		return u.Username
 	}
 
 	name := u.FirstName

@@ -567,7 +567,7 @@ func ExampleNewBotAPI() {
 
 	bot.Debug = true
 
-	log.Printf("Authorized on account %s", bot.Self.UserName)
+	log.Printf("Authorized on account %s", bot.Self.Username)
 
 	u := telegram.NewUpdate(0)
 	u.Timeout = 60
@@ -584,7 +584,7 @@ func ExampleNewBotAPI() {
 			continue
 		}
 
-		log.Printf("[%s] %s", update.Message.From.UserName, update.Message.Text)
+		log.Printf("[%s] %s", update.Message.From.Username, update.Message.Text)
 
 		msg := telegram.NewMessage(update.Message.Chat.ID, update.Message.Text)
 		msg.ReplyToMessageID = update.Message.MessageID
@@ -601,7 +601,7 @@ func ExampleNewWebhook() {
 
 	bot.Debug = true
 
-	log.Printf("Authorized on account %s", bot.Self.UserName)
+	log.Printf("Authorized on account %s", bot.Self.Username)
 
 	_, err = bot.SetWebhook(telegram.NewWebhookWithCert("https://www.google.com:8443/"+bot.Token, "cert.pem"))
 	if err != nil {
@@ -630,7 +630,7 @@ func ExampleWebhookHandler() {
 
 	bot.Debug = true
 
-	log.Printf("Authorized on account %s", bot.Self.UserName)
+	log.Printf("Authorized on account %s", bot.Self.Username)
 
 	_, err = bot.SetWebhook(telegram.NewWebhookWithCert("https://www.google.com:8443/"+bot.Token, "cert.pem"))
 	if err != nil {
@@ -662,7 +662,7 @@ func ExampleAnswerInlineQuery() {
 		log.Panic(err)
 	}
 
-	log.Printf("Authorized on account %s", bot.Self.UserName)
+	log.Printf("Authorized on account %s", bot.Self.Username)
 
 	u := telegram.NewUpdate(0)
 	u.Timeout = 60

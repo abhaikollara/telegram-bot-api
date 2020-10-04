@@ -12,7 +12,7 @@ func TestUserStringWith(t *testing.T) {
 		ID:           0,
 		FirstName:    "Test",
 		LastName:     "Test",
-		UserName:     "",
+		Username:     "",
 		LanguageCode: "en",
 		IsBot:        false,
 	}
@@ -27,7 +27,7 @@ func TestUserStringWithUserName(t *testing.T) {
 		ID:           0,
 		FirstName:    "Test",
 		LastName:     "Test",
-		UserName:     "@test",
+		Username:     "@test",
 		LanguageCode: "en",
 	}
 

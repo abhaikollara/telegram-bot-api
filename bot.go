@@ -292,7 +292,7 @@ func (bot *BotAPI) GetMe() (User, error) {
 //
 // It requires the Message.
 func (bot *BotAPI) IsMessageToMe(message Message) bool {
-	return strings.Contains(message.Text, "@"+bot.Self.UserName)
+	return strings.Contains(message.Text, "@"+bot.Self.Username)
 }
 
 // Send will send a Chattable item to Telegram.
