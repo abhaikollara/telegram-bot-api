@@ -669,7 +669,16 @@ type InputMediaAnimation struct{
 }
 
 // InputMediaAudio represents an audio file to be treated as music to be sent.
-type InputMediaAudio struct{}
+type InputMediaAudio struct{
+	Type  string `json:"type"`
+	Media string `json:"media"`
+	// thumb intentionally missing as it is not currently compatible
+	Caption           string `json:"caption"`
+	ParseMode         string `json:"parse_mode"`
+	Duration          int    `json:"duration"`
+	Performer string `json:"performer"`
+	Title string `json:"title"`
+}
 
 // InputMediaDocument represents a general file to be sent.
 type InputMediaDocument struct{}
