@@ -657,7 +657,16 @@ type InputMediaVideo struct {
 }
 
 // InputMediaAnimation represents an animation file (GIF or H.264/MPEG-4 AVC video without sound) to be sent.
-type InputMediaAnimation struct{}
+type InputMediaAnimation struct{
+	Type  string `json:"type"`
+	Media string `json:"media"`
+	// thumb intentionally missing as it is not currently compatible
+	Caption           string `json:"caption"`
+	ParseMode         string `json:"parse_mode"`
+	Width             int    `json:"width"`
+	Height            int    `json:"height"`
+	Duration          int    `json:"duration"`
+}
 
 // InputMediaAudio represents an audio file to be treated as music to be sent.
 type InputMediaAudio struct{}
